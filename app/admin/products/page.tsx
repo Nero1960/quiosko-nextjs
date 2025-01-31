@@ -18,6 +18,7 @@ async function getProducts(page: number, pageSize: number) {
       category: true,
     },
   });
+  await prisma.$disconnect();
   return products;
 }
 

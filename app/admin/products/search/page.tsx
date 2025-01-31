@@ -17,6 +17,8 @@ async function searchProducts(searchTerm: string) {
     },
   });
 
+  await prisma.$disconnect();
+
   return products;
 }
 

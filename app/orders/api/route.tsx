@@ -21,5 +21,7 @@ export async function GET() {
     },
   });
 
+  await prisma.$disconnect();
+
   return Response.json(orders)
 }

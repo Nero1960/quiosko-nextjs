@@ -27,6 +27,8 @@ export async function createOrder(data: unknown) {
             }
         })
 
+        await prisma.$disconnect();
+
         
     } catch (error) {
         console.log(error);

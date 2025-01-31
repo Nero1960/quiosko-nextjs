@@ -14,6 +14,8 @@ async function getProducts(category: string) {
       },
     },
   });
+
+  await prisma.$disconnect();
   return products;
 }
 

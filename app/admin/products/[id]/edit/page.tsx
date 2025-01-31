@@ -21,6 +21,8 @@ async function getProductById(id: number) {
     notFound();
   }
 
+  await prisma.$disconnect();
+
   return product;
 }
 

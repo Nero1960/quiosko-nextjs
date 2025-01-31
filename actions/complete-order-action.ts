@@ -19,6 +19,7 @@ export async function completeOrder(formData : FormData) {
         })
 
         revalidatePath('/admin/orders')
+        await prisma.$disconnect();
         
     } catch (error) {
         console.log(error)

@@ -21,5 +21,7 @@ export async function updateProduct(data: unknown, id: number) {
         }
     })
 
+    await prisma.$disconnect();
+
     revalidatePath('/admin/products')
 }

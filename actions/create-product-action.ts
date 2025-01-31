@@ -14,4 +14,6 @@ export async function createProduct(data: unknown) {
     await prisma.product.create({
         data: result.data
     })
+
+    await prisma.$disconnect();
 }
