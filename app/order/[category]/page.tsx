@@ -2,6 +2,10 @@ import ProductCard from "@/components/products/ProductCard";
 import Heading from "@/components/ui/Heading";
 import { prisma } from "@/src/lib/prisma";
 
+type OrderPageProps = {
+  params: {category: string}
+}
+
 async function getProducts(category: string) {
   const products = await prisma.product.findMany({
     where: {
@@ -13,11 +17,7 @@ async function getProducts(category: string) {
   return products;
 }
 
-export default async function OrderPage({
-  params,
-}: {
-  params: { category: string };
-}) {
+export default async function OrderPage({params} : OrderPageProps) {
   const products = await getProducts(params.category);
 
   return (
